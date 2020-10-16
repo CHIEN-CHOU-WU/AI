@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import django_heroku
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -84,13 +83,14 @@ WSGI_APPLICATION = 'AI.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd12n6a6u7rgd93',
-        'USER': 'hnujlquilxrkxr',
-        'PASSWORD': '686428c3bd5314381f88e9d1eeb38e6a3dd07dfe730380badff468569aa4ca06',
-        'HOST': 'ec2-204-236-228-169.compute-1.amazonaws.com',
+        'NAME': 'ai',
+        'USER': 'postgres',
+        'PASSWORD': 'musicgood123',
+        'HOST': 'localhost',
         'PORT': '5432'
     }
 }
+import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASE['default'].update(db_from_env)
 
