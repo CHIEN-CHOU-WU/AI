@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 from page.views import home_view
+from studentgradepredicts.views import studentgradepredicts_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('page.urls')),
+    path('studentgradepredicts/', include('studentgradepredicts.urls')),
 ]
